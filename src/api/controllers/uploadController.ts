@@ -18,7 +18,7 @@ const catPost = async (
     }
 
     const response = {
-      message: 'file uploaded',
+      message: 'Cat uploaded',
       data: {filename: req.file.filename, location: res.locals.coords},
     };
     res.json(response);
