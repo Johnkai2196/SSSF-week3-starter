@@ -24,7 +24,7 @@ type Point {
 enum GeoJSONPoint {
   Point
 }
-input InputPoint {
+input LocationInput {
   type: GeoJSONPoint!
   coordinates: [Float]!
 }
@@ -38,7 +38,7 @@ type Query {
   catById(id: ID!): Cat
   cats: [Cat]
   catsByArea(topRight: Coordinates!, bottomLeft: Coordinates!): [Cat]
-  catsByOwner(owner: String!): [Cat]
+  catsByOwner(ownerId: ID!): [Cat]
 }
 
 type Mutation {
@@ -48,7 +48,7 @@ type Mutation {
     filename: String!
     birthdate: DateTime!
     weight: Float!
-    location: InputPoint!
+    location: LocationInput!
   ): Cat
   updateCat(id: ID!, cat_name: String, birthdate: DateTime, weight: Float): Cat
   deleteCat(id: ID!): Cat
