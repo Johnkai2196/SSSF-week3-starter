@@ -7,11 +7,11 @@ type Cat {
   weight: Float
   birthdate: String
   owner: User!
-  location: Point
+  location: Location
   filename: String
 }
 # Location: type, coordinates
-type Point {
+type Location {
   type: GeoJSONPoint
   coordinates: [Float]
 }
